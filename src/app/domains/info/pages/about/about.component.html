@@ -1,0 +1,22 @@
+<main class="p-2">
+	<div class="space-y-2">
+		<input
+			type="number"
+			[value]="duration()"
+			(change)="changeDuration($event)"
+			class="border rounded px-1"
+		>
+		<br />
+		<input
+			type="text"
+			[value]="message()"
+			(change)="changeMessage($event)"
+			class="border rounded px-1"
+		>
+	</div>
+	<p>
+		@if(duration() > 1002){
+			<app-counter [duration]="duration()" [message]="message()" />
+		}
+	</p>
+</main>
