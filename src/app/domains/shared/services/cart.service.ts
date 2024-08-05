@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import {computed, Injectable, signal} from '@angular/core';
 import {Product} from "../models/product.model";
 
 @Injectable({
@@ -6,9 +6,12 @@ import {Product} from "../models/product.model";
 })
 
 export class CartService {
-	public showShoppingCart = signal(false);
-	public cartTotalValue = signal(0)
-	private cartProducts = signal<Product[]>([])
+	showShoppingCart = signal(false);
+	cartTotalPrice = computed(() => {
+		const products = this.cartProducts()
+		return products.reduce((total, prod) => total + prod.price, 0)
+	})
+	cartProducts = signal<Product[]>([])
 
 
 	toggleShoppingCart() {
@@ -21,14 +24,6 @@ export class CartService {
 		if(theProductWasAdded) return
 
 		this.cartProducts.update(cartProducts => [...cartProducts, product])
-		this.updateCartTotalValue()
-	}
-
-	private updateCartTotalValue(){
-		this.cartTotalValue.set(this.cartProducts().reduce((total, prod) => total + prod.price, 0))
-	}
-	get getCartProducts(){
-		return this.cartProducts()
 	}
 
 }

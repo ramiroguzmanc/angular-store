@@ -1,4 +1,4 @@
-import {Component, Input, signal} from '@angular/core';
+import {Component, inject, Input, signal} from '@angular/core';
 import {CartService} from "../../services/cart.service";
 import {CurrencyPipe, NgOptimizedImage} from "@angular/common";
 
@@ -13,13 +13,10 @@ import {CurrencyPipe, NgOptimizedImage} from "@angular/common";
   styleUrl: './cart.component.css'
 })
 export class CartComponent {
-	showShoppingCart: boolean = false
-
-	constructor(public cartService: CartService) {}
-
-	ngOnInit(){
-		this.showShoppingCart = this.cartService.showShoppingCart()
-	}
+	private cartService = inject(CartService)
+	showShoppingCart = this.cartService.showShoppingCart
+	products = this.cartService.cartProducts
+	totalPrice = this.cartService.cartTotalPrice
 
 	toggleCart(){
 		this.cartService.toggleShoppingCart()
