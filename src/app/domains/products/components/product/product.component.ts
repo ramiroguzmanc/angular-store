@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, inject, Input, Output} from '@angular/core';
 import {DatePipe, NgOptimizedImage} from "@angular/common";
 import {Product} from "../../../shared/models/product.model";
 import {CartService} from "../../../shared/services/cart.service";
@@ -15,9 +15,7 @@ import {CartService} from "../../../shared/services/cart.service";
 })
 export class ProductComponent {
 	@Input({required: true}) product!: Product
-
-	constructor(public cartService: CartService) {
-	}
+	private cartService = inject(CartService)
 
 	// @Output() addToCart = new EventEmitter<string>()
 

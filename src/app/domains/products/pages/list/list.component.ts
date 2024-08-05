@@ -13,7 +13,7 @@ import ProductsMockup from "../../../shared/models/products-mockup.json"
 export class ListComponent {
 	products = signal<Product[]>([])
 
-	constructor() {
+	ngOnInit() {
 		this.products.set(ProductsMockup)
 	}
 

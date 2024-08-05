@@ -1,4 +1,4 @@
-import {Component, signal} from '@angular/core';
+import {Component, inject, signal} from '@angular/core';
 import {CartComponent} from "../cart/cart.component";
 import {CartService} from "../../services/cart.service";
 
@@ -12,7 +12,8 @@ import {CartService} from "../../services/cart.service";
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-	constructor(public cartService: CartService) {}
+	private cartService = inject(CartService)
+	cartProducts = this.cartService.cartProducts
 
 	toggleCart(){
 		this.cartService.toggleShoppingCart()
