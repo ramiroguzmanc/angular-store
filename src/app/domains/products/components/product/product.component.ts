@@ -1,7 +1,7 @@
 import {Component, EventEmitter, inject, Input, Output} from '@angular/core';
 import {DatePipe, NgOptimizedImage} from "@angular/common";
-import {Product} from "../../../shared/models/product.model";
-import {CartService} from "../../../shared/services/cart.service";
+import {Product} from "@shared/models/product.model";
+import {CartService} from "@shared/services/cart.service";
 
 @Component({
   selector: 'app-product',

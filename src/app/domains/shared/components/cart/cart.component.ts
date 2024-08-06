@@ -1,6 +1,6 @@
-import {Component, inject, Input, signal} from '@angular/core';
-import {CartService} from "../../services/cart.service";
+import {Component, inject} from '@angular/core';
 import {CurrencyPipe, NgOptimizedImage} from "@angular/common";
+import {CartService} from "@shared/services/cart.service";
 
 @Component({
   selector: 'app-cart',

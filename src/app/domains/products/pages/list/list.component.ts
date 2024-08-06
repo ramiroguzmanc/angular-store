@@ -1,7 +1,7 @@
 import {Component, inject, signal} from '@angular/core';
-import {ProductComponent} from "../../components/product/product.component";
-import {Product} from "../../../shared/models/product.model";
-import {ProductService} from "../../../shared/services/product.service";
+import {ProductComponent} from "@products/components/product/product.component";
+import {Product} from "@shared/models/product.model";
+import {ProductService} from "@shared/services/product.service";
 
 @Component({
   selector: 'app-list',

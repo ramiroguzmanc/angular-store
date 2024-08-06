@@ -1,6 +1,6 @@
-import {Component, inject, signal} from '@angular/core';
-import {CartComponent} from "../cart/cart.component";
-import {CartService} from "../../services/cart.service";
+import {Component, inject} from '@angular/core';
+import {CartService} from "@shared/services/cart.service";
+import {CartComponent} from "@shared/components/cart/cart.component";
 
 @Component({
   selector: 'app-header',
