@@ -25,7 +25,8 @@
 		"baseUrl": "./src",
 		"paths": {
 			"@shared/*": ["app/domains/shared/*"],
-			"@products/*": ["app/domains/products/*"]
+			"@products/*": ["app/domains/products/*"],
+			"@info/*": ["app/domains/info/*"]
 		}
   },
   "angularCompilerOptions": {
