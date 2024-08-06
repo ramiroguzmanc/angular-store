@@ -1,7 +1,7 @@
 <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 	<a href="#">
 		<img class="p-8 rounded-t-lg"
-				 [src]="product.image"
+				 [src]="product.images[0]"
 				 width="640"
 				 height="640"
 				 alt="product image"
@@ -11,10 +11,10 @@
 		<a href="#">
 			<h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{{ product.title }}</h5>
 		</a>
-		<div class="text-white text-xs flex space-x-2 my-2">
-			<p>Fecha de creación:</p>
-			<span>{{product.creationAt | date: 'dd/MM/yyy' }}</span>
-		</div>
+<!--		<div class="text-white text-xs flex space-x-2 my-2">-->
+<!--			<p>Fecha de creación:</p>-->
+<!--			<span>{{product.creationAt | date: 'dd/MM/yyy' }}</span>-->
+<!--		</div>-->
 		<div class="flex items-center justify-between">
 			<span class="text-3xl font-bold text-gray-900 dark:text-white">${{product.price}}</span>
 			<button

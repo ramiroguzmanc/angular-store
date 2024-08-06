@@ -1,7 +1,7 @@
-import {Component, signal} from '@angular/core';
+import {Component, inject, signal} from '@angular/core';
 import {ProductComponent} from "../../components/product/product.component";
 import {Product} from "../../../shared/models/product.model";
-import ProductsMockup from "../../../shared/models/products-mockup.json"
+import {ProductService} from "../../../shared/services/product.service";
 
 @Component({
   selector: 'app-list',
@@ -11,10 +11,19 @@ import ProductsMockup from "../../../shared/models/products-mockup.json"
   styleUrl: './list.component.css'
 })
 export class ListComponent {
+	private productsService = inject(ProductService)
 	products = signal<Product[]>([])
 
-	ngOnInit() {
-		this.products.set(ProductsMockup)
+	ngOnInit(){
+		this.productsService.getProducts()
+			.subscribe({
+				next: (products) => {
+					this.products.set(products)
+				},
+				error: () => {
+
+				}
+			})
 	}
 
 	fromChild(ev: string) {
