@@ -4,6 +4,7 @@ import {Product} from "@shared/models/product.model";
 import {CartService} from "@shared/services/cart.service";
 import {ReversePipe} from "@shared/pipes/reverse.pipe";
 import {TimeAgoPipe} from "@shared/pipes/time-ago.pipe";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-product',
@@ -14,7 +15,8 @@ import {TimeAgoPipe} from "@shared/pipes/time-ago.pipe";
 		UpperCasePipe,
 		CurrencyPipe,
 		ReversePipe,
-		TimeAgoPipe
+		TimeAgoPipe,
+		RouterLink
 	],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
