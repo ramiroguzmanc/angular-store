@@ -1,3 +1,5 @@
+import {Category} from "@shared/models/category.model";
+
 export interface Product {
 	id:          number;
 	title:       string;
@@ -7,12 +9,4 @@ export interface Product {
 	creationAt:  Date;
 	updatedAt:   Date;
 	category:    Category;
-}
-
-export interface Category {
-	id:         number;
-	name:       string;
-	image:      string;
-	creationAt: Date;
-	updatedAt:  Date;
 }
