@@ -13,7 +13,7 @@ import {RouterLink} from "@angular/router";
   templateUrl: './list.component.html',
   styleUrl: './list.component.css'
 })
-export class ListComponent {
+export default class ListComponent {
 	private productsService = inject(ProductService)
 	private categoryService = inject(CategoryService)
 	products = signal<Product[]>([])
